@@ -1,0 +1,14 @@
+{
+  "name": "deno-rust-wasm",
+  "repository": "https://github.com/tgm-templates/deno-rust-wasm",
+  "description": "Deno WebAssembly module by Rust",
+  "variables": [
+    {
+      "name": "moduleName",
+      "description": "Module name"
+    }
+  ],
+  "files": [
+    "Cargo.toml"
+  ]
+}
