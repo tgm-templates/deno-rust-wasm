@@ -17,6 +17,6 @@
     }
   ],
   "files": [
-    "Cargo.toml"
+    "Cargo.toml", "scripts/build.ts"
   ]
 }
