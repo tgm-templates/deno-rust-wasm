@@ -1,5 +1,5 @@
 import {encode} from "https://deno.land/std@0.74.0/encoding/base64.ts";
-import {compress} from "https://deno.land/x/lz4@v0.1.2/mod.ts";
+import {compress} from "https://deno.land/x/brotli@v0.1.4/mod.ts";
 import {minify} from "https://jspm.dev/terser@5.3.7";
 
 const name = "@moduleName@";
@@ -66,8 +66,8 @@ log(
 );
 
 log("inlining wasm in js");
-const source = `import * as lz4 from "https://deno.land/x/lz4@v0.1.2/mod.ts";
-                export const source = lz4.decompress(Uint8Array.from(atob("${encoded}"), c => c.charCodeAt(0)));`;
+const source = `import * as brotli from "https://deno.land/x/brotli@v0.1.4/mod.ts";
+                export const source = brotli.decompress(Uint8Array.from(atob("${encoded}"), c => c.charCodeAt(0)));`;
 
 const init = await Deno.readTextFile(`pkg/${name}.js`);
 
